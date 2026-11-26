@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c16">
+  <title>Smart Finance for Pi | أسعار Pi وحاسبة القفل</title>
+  <meta name="description" content="تابع سعر عملة Pi، حوّلها إلى الدولار والدينار العراقي والريال السعودي والدرهم الإماراتي، وقدّر مكافآت قفل عملاتك.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" name="siteName" content="Smart Finance for Pi">
+  <meta property="og:title" content="Smart Finance for Pi — أسعار Pi وحاسبة القفل">
+  <meta property="og:description" name="siteDescription" content="لوحة مالية عربية لمتابعة سعر Pi، وتحويل العملات، وتقدير مكافآت قفل Pi.">
+  <link rel="icon" href="/pi-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5m6 6-6-6 6-6"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="m17 3 4 4-4 4m4-4H3m4 6-4 4 4 4m-4-4h18"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 4 2 5-6"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0-1.8 7.4M20 5v5h-5"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M14 4h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5m-3-12 4 4-4 4m4-4H3"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="f-USD" viewBox="0 0 30 22"><rect width="30" height="22" fill="#f4ebee"/><path d="M0 2h30M0 6h30M0 10h30M0 14h30M0 18h30M0 22h30" stroke="#c55666" stroke-width="2"/><path fill="#45558f" d="M0 0h13v12H0z"/><path d="M3 3h1m3 0h1m2 0h1M3 6h1m3 0h1m2 0h1M3 9h1m3 0h1m2 0h1" stroke="#f4ebee"/></symbol>
+    <symbol id="f-IQD" viewBox="0 0 30 22"><path fill="#d95a63" d="M0 0h30v7.33H0z"/><path fill="#eeeff5" d="M0 7.33h30v7.34H0z"/><path fill="#171a24" d="M0 14.67h30V22H0z"/><text x="15" y="13" text-anchor="middle" direction="ltr" fill="#1a805c" font-size="5.7" font-weight="700">الله أكبر</text></symbol>
+    <symbol id="f-SAR" viewBox="0 0 30 22"><path fill="#237c57" d="M0 0h30v22H0z"/><path d="M6 14.5h18l-2 1.3H7m1-5v-3l1 2 2 .5v-3m2 3.2h2l1-3.1m2 3.1V7.4m2 3.1 1-2.4 2 2h1V7" stroke="#f1f5ec" stroke-width=".85" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="f-AED" viewBox="0 0 30 22"><path fill="#2d865f" d="M0 0h30v7.33H0z"/><path fill="#f1f0f4" d="M0 7.33h30v7.34H0z"/><path fill="#171a24" d="M0 14.67h30V22H0z"/><path fill="#d75865" d="M0 0h8v22H0z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+  <header class="topbar" id="top">
+    <div class="shell topbar-inner">
+      <a href="#top" class="brand" aria-label="Smart Finance for Pi — الرئيسية">
+        <img src="/pi-mark.svg" alt="" width="42" height="42">
+        <span class="brand-text" dir="ltr"><strong>Smart Finance <span>for Pi</span></strong><small dir="rtl">أدوات مجتمع Pi المالية</small></span>
+      </a>
+      <nav aria-label="التنقل الرئيسي">
+        <a class="nav-link active" href="#top" aria-current="location">نظرة عامة</a>
+        <a class="nav-link" href="#converter">محوّل العملات</a>
+        <a class="nav-link" href="#lockup">حاسبة القفل</a>
+      </nav>
+      <button class="button login-button" type="button" id="login"><svg class="icon"><use href="#i-login"/></svg><span id="login-label">الدخول بحساب Pi</span></button>
+    </div>
+  </header>
+
+  <main class="shell" id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow hero-kicker"><i></i> لوحة مالية لمجتمع Pi</span>
+        <h1 id="hero-title">تابع سعر <bdi>Pi</bdi>.<br><em>احسبها بذكاء.</em></h1>
+        <p>تابع سعر عملة <bdi>Pi</bdi>، وحوّلها إلى عملاتك المفضلة، وقدّر مكافآت القفل من مكان واحد.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#converter">ابدأ التحويل <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="button secondary" href="#lockup"><svg class="icon"><use href="#i-lock"/></svg> حاسبة القفل</a>
+        </div>
+      </div>
+      <div class="hero-art" dir="ltr" aria-hidden="true">
+        <img src="/orbit.svg" alt="" width="560" height="340" fetchpriority="high">
+        <div class="art-meta"><span></span> PI MARKET · 01</div>
+        <div class="art-chip art-chip-top"><span></span> PI / USD</div>
+        <div class="art-chip art-chip-bottom"><svg class="icon"><use href="#i-chart"/></svg> PI INDEX</div>
+      </div>
+    </section>
+
+    <section class="market" id="market" aria-labelledby="market-title">
+      <div class="section-heading">
+        <div class="heading-content"><span class="heading-icon mint"><svg class="icon"><use href="#i-chart"/></svg></span><div><h2 id="market-title">أسعار Pi الآن</h2><p>قيمة عملة Pi واحدة بالعملات الرئيسية</p></div></div>
+        <div class="market-controls"><span class="status-pill" id="market-status" role="status"><i></i> جارٍ جلب الأسعار</span><button class="icon-button" id="refresh" type="button" title="تحديث الأسعار" aria-label="تحديث الأسعار"><svg class="icon"><use href="#i-refresh"/></svg></button></div>
+      </div>
+      <div class="rate-grid">
+        <article class="rate-card" data-rate="USD">
+          <div class="currency-heading"><svg class="flag" aria-hidden="true"><use href="#f-USD"/></svg><div><h3>الدولار الأمريكي</h3><span class="ticker" dir="ltr">USD</span></div></div>
+          <div class="rate-bottom"><bdi class="rate-value">—</bdi><bdi class="rate-change" hidden></bdi></div>
+        </article>
+        <article class="rate-card" data-rate="IQD">
+          <div class="currency-heading"><svg class="flag" aria-hidden="true"><use href="#f-IQD"/></svg><div><h3>الدينار العراقي</h3><span class="ticker" dir="ltr">IQD</span></div></div>
+          <div class="rate-bottom"><bdi class="rate-value">—</bdi><span class="rate-note">سعر تقريبي</span></div>
+        </article>
+        <article class="rate-card" data-rate="SAR">
+          <div class="currency-heading"><svg class="flag" aria-hidden="true"><use href="#f-SAR"/></svg><div><h3>الريال السعودي</h3><span class="ticker" dir="ltr">SAR</span></div></div>
+          <div class="rate-bottom"><bdi class="rate-value">—</bdi><span class="rate-note">سعر تقريبي</span></div>
+        </article>
+        <article class="rate-card" data-rate="AED">
+          <div class="currency-heading"><svg class="flag" aria-hidden="true"><use href="#f-AED"/></svg><div><h3>الدرهم الإماراتي</h3><span class="ticker" dir="ltr">AED</span></div></div>
+          <div class="rate-bottom"><bdi class="rate-value">—</bdi><span class="rate-note">سعر تقريبي</span></div>
+        </article>
+      </div>
+      <p class="market-detail" id="market-detail" aria-live="polite"></p>
+    </section>
+
+    <div class="tools">
+      <section class="panel converter" id="converter" aria-labelledby="converter-title">
+        <div class="heading-content panel-heading"><span class="heading-icon mint"><svg class="icon"><use href="#i-swap"/></svg></span><div><h2 id="converter-title">محوّل العملات</h2><p>احسب قيمة عملاتك بالسعر المتاح الآن</p></div></div>
+        <div class="convert-stack">
+          <div class="convert-field">
+            <div><label for="amount">المبلغ المراد تحويله</label><input id="amount" type="text" dir="ltr" inputmode="decimal" value="100" autocomplete="off" maxlength="25" aria-describedby="convert-error"></div>
+            <div class="currency-pick" id="from-pick"></div>
+          </div>
+          <div class="swap-rail"><button class="icon-button swap-button" type="button" id="swap" aria-label="عكس اتجاه التحويل" title="عكس اتجاه التحويل"><svg class="icon"><use href="#i-swap"/></svg></button></div>
+          <div class="convert-field convert-output">
+            <div><label for="converted">المبلغ التقديري</label><output id="converted" dir="ltr" for="amount currency">—</output></div>
+            <div class="currency-pick" id="to-pick"></div>
+          </div>
+        </div>
+        <p id="convert-error" class="inline-message" role="status" hidden></p>
+        <div class="converter-foot"><span class="rate-caption"><svg class="icon"><use href="#i-info"/></svg><span id="equation">سعر السوق التقريبي</span></span><button class="text-button" id="copy-result" type="button" disabled><svg class="icon"><use href="#i-copy"/></svg> نسخ النتيجة</button></div>
+      </section>
+
+      <section class="panel chart-panel" aria-labelledby="chart-title">
+        <div class="chart-heading">
+          <div class="heading-content panel-heading"><span class="heading-icon purple"><svg class="icon"><use href="#i-chart"/></svg></span><div><h2 id="chart-title">حركة سعر Pi</h2><p>أسعار الإغلاق مقابل الدولار</p></div></div>
+          <div class="periods" aria-label="الفترة الزمنية"><button type="button" data-period="1" aria-pressed="true">24 س</button><button type="button" data-period="7" aria-pressed="false">7 أ</button><button type="button" data-period="30" aria-pressed="false">30 ي</button></div>
+        </div>
+        <div class="chart-summary"><bdi id="chart-price">—</bdi><bdi id="chart-change" class="rate-change" hidden></bdi></div>
+        <div class="chart-frame" id="chart-frame" dir="ltr" aria-label="مخطط سعر Pi مقابل الدولار الأمريكي">
+          <svg id="chart" viewBox="0 0 480 170" role="img" aria-labelledby="chart-caption" hidden>
+            <title id="chart-caption">حركة سعر Pi</title>
+            <defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#79e8d1" stop-opacity=".24"/><stop offset="1" stop-color="#79e8d1" stop-opacity="0"/></linearGradient></defs>
+            <g id="chart-guides"></g><path id="chart-area" fill="url(#chart-fill)"/><path id="chart-line" fill="none" stroke="#79e8d1" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle id="chart-end" r="4" fill="#79e8d1"/>
+          </svg>
+          <span id="chart-empty" dir="rtl">جارٍ تحميل بيانات السوق…</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel lockup" id="lockup" aria-labelledby="lockup-title">
+      <div class="heading-content panel-heading"><span class="heading-icon purple"><svg class="icon"><use href="#i-lock"/></svg></span><div><h2 id="lockup-title">حاسبة مكافآت القفل <bdi class="lockup-tag">LOCKUP</bdi></h2><p>قدّر الزيادة في معدل التعدين بناءً على إعدادات القفل</p></div></div>
+      <div class="lockup-layout">
+        <form class="lockup-fields" id="lockup-form">
+          <label class="form-field" for="lock-percent">نسبة القفل من الرصيد المعدَّن<select id="lock-percent"><option value="0">0%</option><option value="25">25%</option><option value="50" selected>50%</option><option value="90">90%</option><option value="100">100%</option><option value="150">150%</option><option value="200">200%</option></select></label>
+          <label class="form-field" for="lock-duration">مدة القفل<select id="lock-duration"><option value="0">بدون قفل</option><option value="0.1">أسبوعان</option><option value="0.5">6 أشهر</option><option value="1" selected>سنة واحدة</option><option value="2">3 سنوات</option></select></label>
+          <label class="form-field" for="sessions">جلسات التعدين السابقة<input id="sessions" dir="ltr" type="text" inputmode="numeric" autocomplete="off" value="100" maxlength="10"><small>عدد الجلسات المكتملة قبل الجلسة الحالية</small></label>
+          <label class="form-field" for="base-rate">معدل التعدين الأساسي <bdi>(Pi/h)</bdi><input id="base-rate" dir="ltr" type="text" inputmode="decimal" autocomplete="off" placeholder="0.00" maxlength="20"><small>أدخل المعدّل الأساسي من تطبيق Pi</small></label>
+          <p id="lockup-error" class="inline-message" role="status" hidden></p>
+        </form>
+        <div class="lockup-result" aria-live="polite">
+          <div class="lockup-result-label"><svg class="icon"><use href="#i-chart"/></svg> تعزيز معدل التعدين</div>
+          <bdi class="boost" id="boost">+100%</bdi>
+          <div class="lockup-breakdown"><span>المكافأة الإضافية بالساعة</span><bdi id="bonus-hour">—</bdi><span>المكافأة الإضافية خلال 24 ساعة تعدين نشط</span><bdi id="bonus-day">—</bdi></div>
+        </div>
+      </div>
+      <details class="lockup-info">
+        <summary><svg class="icon"><use href="#i-info"/></svg> كيف تُحسب مكافآت القفل؟ <svg class="icon details-arrow"><use href="#i-down"/></svg></summary>
+        <p>المكافأة الإضافية في الساعة تساوي معامل مدة القفل × نسبة القفل × اللوغاريتم العشري لعدد الجلسات السابقة × معدل التعدين الأساسي. عند وجود أقل من جلستين يكون التعزيز صفرًا. نسب القفل فوق 100% تعتمد على إعدادات القفل المتاحة لحسابك. الحاسبة لا تقفل العملات ولا تنفّذ أي معاملة. راجع <a href="https://minepi.com/white-paper/" target="_blank" rel="noopener noreferrer">ورقة Pi Network البيضاء</a>.</p>
+      </details>
+      <p class="fine-print">هذه تقديرات للتعدين النشط، وليست فائدة ثابتة على الرصيد المقفل. قد يتغير المعدل الأساسي بمرور الوقت.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a href="#top" class="brand"><img src="/pi-mark.svg" alt="" width="34" height="34"><span class="brand-text" dir="ltr"><strong>Smart Finance <span>for Pi</span></strong></span></a>
+      <p>أداة مستقلة للتقديرات، وليست تابعة لـ Pi Network أو مقدّمة لنصيحة مالية.</p>
+      <a class="source-link" href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">بيانات الصرف من ExchangeRate-API</a>
+    </div>
+  </footer>
+
+  <dialog id="account-dialog" aria-labelledby="account-title">
+    <div class="dialog-header"><span class="heading-icon purple"><svg class="icon"><use href="#i-login"/></svg></span><button type="button" class="icon-button" id="dialog-close" aria-label="إغلاق"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <h2 id="account-title">الدخول بحساب Pi</h2>
+    <p id="account-status" role="status"></p>
+    <div id="account-guide" hidden><p>افتح رابط هذا التطبيق في <bdi>Pi Browser</bdi> ثم اضغط زر الدخول. لن نطلب كلمة مرورك أو عبارة استرداد محفظتك.</p><button class="button secondary" id="copy-link" type="button"><svg class="icon"><use href="#i-copy"/></svg> نسخ رابط التطبيق</button></div>
+    <button class="button secondary" id="sign-out" type="button" hidden>تسجيل الخروج من التطبيق</button>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

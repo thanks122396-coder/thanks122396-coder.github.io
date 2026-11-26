@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" fill="none">
+  <defs>
+    <linearGradient id="orbit" x1="80" y1="310" x2="491" y2="35" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#71f1d8" stop-opacity=".6"/><stop offset=".5" stop-color="#586b94" stop-opacity=".12"/><stop offset="1" stop-color="#9a89ef" stop-opacity=".6"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="-110" y1="-60" x2="119" y2="77" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42337d"/><stop offset=".27" stop-color="#9891dc"/><stop offset=".55" stop-color="#6e61b4"/><stop offset=".82" stop-color="#342866"/><stop offset="1" stop-color="#7b6acb"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="-81" y1="-102" x2="91" y2="93" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ece4ff"/><stop offset=".22" stop-color="#b8a6ff"/><stop offset=".63" stop-color="#5d489c"/><stop offset="1" stop-color="#baa2fb"/>
+    </linearGradient>
+    <linearGradient id="face" x1="-67" y1="-90" x2="65" y2="99" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#403370"/><stop offset=".43" stop-color="#28214c"/><stop offset="1" stop-color="#17152d"/>
+    </linearGradient>
+    <linearGradient id="letter" x1="-38" y1="-52" x2="53" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f0e9ff"/><stop offset=".48" stop-color="#b39bf6"/><stop offset="1" stop-color="#8870d8"/>
+    </linearGradient>
+    <radialGradient id="halo"><stop stop-color="#7159cb" stop-opacity=".3"/><stop offset=".65" stop-color="#5c46aa" stop-opacity=".11"/><stop offset="1" stop-color="#523b92" stop-opacity="0"/></radialGradient>
+    <radialGradient id="shadow"><stop stop-color="#030510" stop-opacity=".9"/><stop offset="1" stop-color="#030510" stop-opacity="0"/></radialGradient>
+    <pattern id="mesh" width="31" height="31" patternUnits="userSpaceOnUse"><path d="M31 0H0v31" stroke="#a3aed3" stroke-opacity=".14"/></pattern>
+    <pattern id="etch" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 0h4" stroke="#bca6f3" stroke-opacity=".095"/></pattern>
+    <radialGradient id="meshAlpha"><stop stop-color="white"/><stop offset=".7" stop-color="white" stop-opacity=".65"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+    <mask id="fade"><ellipse cx="281" cy="169" rx="275" ry="169" fill="url(#meshAlpha)"/></mask>
+  </defs>
+  <ellipse cx="284" cy="158" rx="264" ry="157" fill="url(#halo)"/>
+  <path d="M0 0h560v340H0z" fill="url(#mesh)" mask="url(#fade)"/>
+  <g stroke="url(#orbit)" transform="rotate(-17 278 175)">
+    <ellipse cx="278" cy="175" rx="211" ry="73"/><ellipse cx="278" cy="175" rx="245" ry="102" stroke-dasharray="3 6" stroke-opacity=".65"/>
+    <ellipse cx="278" cy="175" rx="180" ry="109" stroke-opacity=".6"/>
+  </g>
+  <path d="m24 237 66-17 32 7 29-22 41 5 44-37 42 10 52-35 35 6 39-32 26 6 58-44 38-3" stroke="#79e5d1" stroke-opacity=".29" stroke-dasharray="3 5"/>
+  <g fill="#7cebd3"><circle cx="104" cy="235" r="3"/><circle cx="431" cy="128" r="3.5"/><circle cx="488" cy="85" r="2.5" opacity=".7"/><circle cx="194" cy="254" r="2" opacity=".8"/></g>
+  <g stroke="#9890c8" stroke-opacity=".65"><path d="M98 96h12m-6-6v12M445 227h12m-6-6v12M374 43h8m-4-4v8M157 58h8m-4-4v8"/></g>
+  <ellipse cx="283" cy="287" rx="130" ry="28" fill="url(#shadow)"/>
+  <g transform="translate(284 163) rotate(-15) scale(.84 1)">
+    <circle cx="-18" cy="8" r="112" fill="#292045" stroke="#8777bd"/>
+    <path d="M-18-104H0v224h-18a112 112 0 1 1 0-224Z" fill="url(#edge)" stroke="#a695d6" stroke-opacity=".55"/>
+    <path d="m-100-67 18 1m-27 11 19 1m-26 13 20 2m-25 13 20 3m-24 13 19 3m-22 14 18 3m-18 13 18 2m-15 14 20 2m-16 14 19 2m-11 13 18 2m-8 13 19 1m-5 12h16m0 11h13" stroke="#22193f" stroke-opacity=".56" stroke-width="2"/>
+    <circle r="112" fill="url(#rim)" stroke="#c6baf4" stroke-width="1.5"/>
+    <circle r="106" fill="#211b3f" stroke="#2b2252" stroke-width="2"/>
+    <circle r="102" fill="url(#face)" stroke="#ae99ea" stroke-width="1.3"/>
+    <circle r="100" fill="url(#etch)"/>
+    <circle r="93" stroke="#a69acb" stroke-opacity=".62" stroke-dasharray="2 5" stroke-width="5"/>
+    <circle r="83" stroke="#aa95ef" stroke-opacity=".44"/>
+    <circle r="77" stroke="#aa95ef" stroke-opacity=".18"/>
+    <path d="M-55-28c2-9 10-13 23-13h81m-73 2C-22-6-32 27-46 42m62-81C7-9 3 26 21 37c8 5 17 4 25-1" stroke="#130f28" stroke-width="14" stroke-linecap="round" transform="translate(-2 5)"/>
+    <path d="M-55-28c2-9 10-13 23-13h81m-73 2C-22-6-32 27-46 42m62-81C7-9 3 26 21 37c8 5 17 4 25-1" stroke="url(#letter)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M-49-35c4-6 12-9 23-9h68" stroke="#fff" stroke-opacity=".43" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="m-4-64 4-4 4 4-4 4-4-4Zm0 130 4-4 4 4-4 4-4-4Z" fill="#a18bd5"/>
+  </g>
+  <path d="M79 238c53 39 250-2 352-69 34-23 54-42 56-60" stroke="url(#orbit)" stroke-opacity=".66"/>
+  <circle cx="373" cy="201" r="3" fill="#a0eedf"/><circle cx="373" cy="201" r="7" stroke="#a0eedf" stroke-opacity=".34"/>
+</svg>
